@@ -1,0 +1,246 @@
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background-size: cover;
+    background-position: center center;
+    filter: blur(1px);
+    transition: all 0.3s ease;
+    display: block;
+    max-width: 100%;
+}
+
+/* navbar.css */
+
+.logo-wrapper {
+    /* position: relative; */
+    max-width: 100%;
+    height: 800px;
+    overflow: hidden;
+    /* hides any overflowing content */
+}
+
+
+.overlay-text {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.overlay-paragraph {
+    position: absolute;
+    top: 29%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.overlay-button {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    width: 8%;
+    height: 3%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 30px;
+    color: white;
+    background-color: rgb(15, 102, 157);
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 80px;
+    /* max-width: 1300px; */
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container>div {
+    flex: 1;
+    min-width: 300px;
+}
+
+.text {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.paragraph {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.container div:hover {
+    background-color: #f3dc73;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.style {
+    background-color: #d3d7de;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+}
+
+.design {
+    display: flex;
+    gap: 12%;
+    padding: 10px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.number {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.content {
+    display: flex;
+    /* Use flexbox for horizontal alignment */
+    align-items: center;
+    /* Vertically center both divs */
+    justify-content: center;
+    /* Horizontally center both divs */
+    height: 50vh;
+    gap: 20px;
+    /* Space between text and image */
+}
+
+.a {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    padding: 10px;
+    width: 85vh;
+}
+
+.b {
+    color: #333;
+    font-size: 24px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.contentPic {
+    height: 45vh;
+    border: 4px dotted rgb(60, 160, 241);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1024px) and (min-width: 768px) {
+
+    .overlay-text {
+        font-size: 50px;
+    }
+
+    .overlay-paragraph {
+        font-size: 30px;
+    }
+
+    .overlay-button {
+        font-size: 16px;
+        width: 12%;
+        height: 7%;
+    }
+
+    .container {
+        gap: 15px;
+        padding: 40px;
+    }
+
+    .text {
+        font-size: 20px;
+    }
+
+    .paragraph {
+        font-size: 14px;
+    }
+}
+
+/* Mobile view (up to 767px) */
+@media (max-width: 767px) {
+
+    .logo-wrapper {
+        height: 500px;
+    }
+
+    .overlay-text {
+        font-size: 36px;
+    }
+
+    .overlay-paragraph {
+        font-size: 24px;
+    }
+
+    .overlay-button {
+        font-size: 14px;
+        width: 20%;
+        height: 8%;
+    }
+
+    .container {
+        gap: 10px;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .container>div {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .text {
+        font-size: 18px;
+    }
+
+    .paragraph {
+        font-size: 12px;
+    }
+}

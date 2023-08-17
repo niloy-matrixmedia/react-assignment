@@ -1,0 +1,43 @@
+.heder {
+    margin-left: auto;
+}
+
+.color {
+    color: rgb(255, 255, 255);
+    position: relative;
+}
+
+.navbar {
+    opacity: 0.7;
+    background-color: #ffffff00 !important;
+}
+.navbar-brand{
+    color: white;
+}
+.no-underline {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.custom-button {
+    /* background-color: transparent; */
+    border-color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: transparent;
+    /* transition: background-color 0.3s ease; */
+}
+
+.custom-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Slight gray background on hover */
+}
+.button{
+    text-decoration: none;
+    color: white;
+}
+.search{
+    border-radius: 55px;
+    background-color: transparent;
+}
