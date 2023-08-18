@@ -3,6 +3,7 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import CheckIcon from '@mui/icons-material/Check';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
+import InsightsIcon from '@mui/icons-material/Insights';
 import { IMAGES } from '../../constants';
 import Navbar from '../../components/navabar/Navbar'
 import "./home.css"
@@ -70,14 +71,67 @@ const Home = () => {
             </div>
             <div className='content'>
                 <div className='a'>
-                    <TipsAndUpdatesIcon style={{ color: 'rgb(8,141,205)' }} />
+                    <div className="icon-container">
+                        <TipsAndUpdatesIcon style={{ color: 'rgb(8,141,205)' }} />
+                    </div>
                     <h1 className='b'>Measure Your scientific impact</h1>
-                    <p style={{ color: '#a1a6ad',fontSize:'18px'}}>
+                    <p style={{ color: '#a1a6ad', fontSize: '18px' }}>
                         Get in-depth stats on who's been reading your work and keep track of your citations.
                     </p>
                 </div>
                 <div>
-                <img className="contentPic" src={IMAGES.researchAvatar} alt="researchAvatar" />
+                    <img className="contentPic" src={IMAGES.researchAvatar} alt="researchAvatar" />
+                </div>
+            </div>
+            <div className='content'>
+                <div>
+                    <img className="researchPeople" src={IMAGES.researchPeople} alt="researchPeople" />
+                </div>
+                <div className='a'>
+                    <div className="icon-container">
+                        <InsightsIcon style={{ color: 'rgb(8,141,205)' }} />
+                    </div>
+
+                    <h1 className='b'>Connect with Your scientific Community</h1>
+                    <div className='adjust'>
+                        <button className="custom-button" >
+                            <a className="button" href="">Engineering</a>
+                        </button>
+                        <button className="custom-button" >
+                            <a className="button" href="">mathamatic</a>
+                        </button>
+                        <button className="custom-button" >
+                            <a className="button" href="">biology</a>
+                        </button>
+                        <button className="custom-button" >
+                            <a className="button" href="">computer science</a>
+                        </button>
+                        <button className="custom-button" >
+                            <a className="button" href="">climate</a>
+                        </button>
+                        <button className="custom-button" >
+                            <a className="button" href="">medicine</a>
+                        </button>
+                        <button className="custom-button" >
+                            <a className="button" href="">Physics</a>
+                        </button>
+                        <button className="custom-button" >
+                            <a className="button" href="">sociology</a>
+                        </button>
+                        <button className="custom-button" >
+                            <a className="button" href="">chemistry</a>
+                        </button>
+                        <button className="custom-button" >
+                            <a className="button" href="">astrophysics</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div className='staffcontent'>
+                <img className="staff" src={IMAGES.staff} alt="Socimo" />
+                <div className='x'>
+                <p className='overlay-staff'>ADVANCE YOUR RESEARCH</p>
+                <button className='overlay-staffbutton'>Join now</button>
                 </div>
             </div>
         </div>

@@ -1,14 +1,49 @@
-import React from 'react'
 import { IMAGES } from '../../../constants'
-import api from '../../../api/api';
+import React, { useState } from 'react'
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../context/AuthContext';
 
 const Login = () => {
-    const handleSubmit = (e) => {
+
+    const [username, setusername] = useState('');
+    const [passShow, setPassShow] = useState(false)
+    const [password, setPassword] = useState('');
+    const [msg, setMsg] = useState('');
+    const navigate = useNavigate();
+    const { login } = useAuth();
+
+    const Auth = async (e) => {
         e.preventDefault();
-        api.post('/login', { emial: 'rr' }).then((data) => {
-            console.log(data);
-        });
-    };
+        try {
+            const response = await axios.post('http://demoyourprojects.com:5085/auth/signin', {
+                username: username,
+                password: password
+            });
+            
+            // Assuming the response contains the token in an object like:
+            // { access_token: 'YOUR_TOKEN' }
+            const token = response.data.data.access_token;
+            if (token) {
+                // Set the token in the local storage
+                localStorage.setItem('access_token', token);
+                
+                // Invoke your login function
+                login();
+    
+                // Navigate to the dashboard
+                navigate("/dashboard");
+            } else {
+                // Handle the case where the token might not be in the response
+                console.warn("Token not found in response");
+            }
+        } catch (error) {
+            console.log(error, "line22");
+            if (error.response) {
+                setMsg(error.response.data.msg);
+            }
+        }
+    }    
 
     return (
         <div>
@@ -16,64 +51,49 @@ const Login = () => {
                 <a className="navbar-brand" href="/">
                     <img src={IMAGES.Socimo} alt="Socimo" width="30" height="30" />
                 </a>
-                <a className="navbar-brand" href="#">𝕊𝕠𝕔𝕚𝕞𝕠</a>
+                <a className="dash" href="#">𝕊𝕠𝕔𝕚𝕞𝕠</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
                 <div>
-                    <form className="d-flex" onSubmit={handleSubmit}>
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <form className="d-flex">
+                        <input className="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" />
                     </form>
                 </div>
             </nav>
-            <form>
-                <div class="form-outline mb-4">
-                    <input type="email" id="form2Example1" class="form-control" />
-                    <label class="form-label" for="form2Example1">Email address</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="password" id="form2Example2" class="form-control" />
-                    <label class="form-label" for="form2Example2">Password</label>
-                </div>
-
-                <div class="row mb-4">
-                    <div class="col d-flex justify-content-center">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="form2Example34" checked />
-                            <label class="form-check-label" for="form2Example34"> Remember me </label>
+            <div className="hero-body">
+                <div className="container">
+                    <div className="columns is-centered">
+                        <div className="column is-4-desktop">
+                            <form onSubmit={Auth} className="box">
+                                <p className="has-text-centered">{msg}</p>
+                                <div className="field mt-5">
+                                    <label className="label">username</label>
+                                    <div className="controls">
+                                        <input type="text" className="input" placeholder="Enter Your username" value={username} onChange={(e) => setusername(e.target.value)} />
+                                    </div>
+                                </div>
+                                <div className="form_input">
+                                    <label className="label">Password</label>
+                                    <div className="two">
+                                        <input type={!passShow ? "password" : "text"} className="input" placeholder="******" value={password} onChange={(e) => setPassword(e.target.value)} />
+                                        <div className='showpass' onClick={() => setPassShow(!passShow)}>
+                                            {!passShow ? "Show" : "Hide"}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="field mt-5">
+                                    <button className="button is-success is-fullwidth">Login</button>
+                                </div>
+                                <div>
+                                    if have not any account? please<a href='/register'>Register</a>
+                                </div>
+                            </form>
                         </div>
                     </div>
-
-                    <div class="col">
-                        <a href="#!">Forgot password?</a>
-                    </div>
                 </div>
-
-                <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-
-                <div class="text-center">
-                    <p>Not a member? <a href="#!">Register</a></p>
-                    <p>or sign up with:</p>
-                    <button type="button" class="btn btn-secondary btn-floating mx-1">
-                        <i class="fab fa-facebook-f"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-secondary btn-floating mx-1">
-                        <i class="fab fa-google"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-secondary btn-floating mx-1">
-                        <i class="fab fa-twitter"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-secondary btn-floating mx-1">
-                        <i class="fab fa-github"></i>
-                    </button>
-                </div>
-            </form>
+            </div>
         </div>
     )
 }

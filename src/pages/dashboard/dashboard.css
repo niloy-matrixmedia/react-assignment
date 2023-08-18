@@ -1,0 +1,66 @@
+.dash{
+    color: black;
+    text-decoration: none;
+    padding: 9px;
+}
+.custom-button {
+    /* background-color: transparent; */
+    border-color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: transparent;
+    margin-left: 60%;
+    /* transition: background-color 0.3s ease; */
+}
+
+.custom-button:hover {
+    background-color: rgba(238, 113, 113, 0.979);
+    /* Slight gray background on hover */
+}
+.button{
+    text-decoration: none;
+    color: white;
+}
+.button:hover{
+    font-size: 30px;
+}
+.logout-container {
+    display: flex;
+    justify-content: flex-end;  /* This pushes the button to the right */
+    margin-left: auto;
+  }
+  .person{
+    display: flex;
+    justify-content: flex-end;  /* This pushes the button to the right */
+    margin-left: 70%;
+    cursor: pointer;
+    /* font-size: 50px;
+    font-weight: 40px; */
+  }
+  .person:hover{
+    font-size: 30px;
+  }
+  .dropdown-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+    top: 30px;  /* Adjust based on your PersonIcon's height */
+}
+
+.dropdown-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdown-content li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.dropdown-content li:hover {
+    background-color: #ddd;
+}

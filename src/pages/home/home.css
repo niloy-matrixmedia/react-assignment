@@ -26,7 +26,7 @@
 
 .overlay-text {
     position: absolute;
-    top: 25%;
+    top: 14%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
@@ -41,7 +41,7 @@
 
 .overlay-paragraph {
     position: absolute;
-    top: 29%;
+    top: 18%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
@@ -56,15 +56,15 @@
 
 .overlay-button {
     position: absolute;
-    top: 35%;
+    top: 23%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
     font-size: 15px;
     font-weight: bold;
     text-align: center;
-    width: 8%;
-    height: 3%;
+    width: 7%;
+    height: 2%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -130,14 +130,10 @@
 
 .content {
     display: flex;
-    /* Use flexbox for horizontal alignment */
     align-items: center;
-    /* Vertically center both divs */
     justify-content: center;
-    /* Horizontally center both divs */
     height: 50vh;
     gap: 20px;
-    /* Space between text and image */
 }
 
 .a {
@@ -151,9 +147,9 @@
 
 .b {
     color: #333;
-    font-size: 24px;
+    font-size: 55px;
     margin: 0;
-    font-weight: 600;
+    font-weight: 300;
 }
 
 .contentPic {
@@ -162,6 +158,63 @@
     border-radius: 10px;
     padding: 15px;
 }
+.researchPeople{
+    height: 45vh;
+    border: 4px dotted rgb(60, 160, 241);
+    border-radius: 10px;
+    padding: 15px;
+}
+.icon-container {
+    width: 45px; /* Desired width */
+    height: 55px; /* Desired height */
+    display: inline-flex;
+}
+
+.icon-container svg {
+    width: 100%;
+    height: 100%;
+}
+.custom-button {
+    /* background-color: transparent; */
+    border-color: rgb(107, 206, 219);
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 5px 5px;
+    background-color: transparent;
+    padding: 10px;
+    margin: 5px 5px 5px 5px;
+}
+
+.custom-button:hover {
+    background-color: rgba(138, 230, 233, 0.979);
+    color: white;
+    padding: 20px;
+}
+.button{
+    text-decoration: none;
+    color: #737373;
+}
+.adjust{
+    width: 65%;
+}
+.staffcontent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    gap: 20px;
+}
+.staff{
+    height: 60vh;
+    width: 100%;
+    filter: blur(1px);
+}
+.x{
+    position: absolute;
+}
+
+
+
 
 
 

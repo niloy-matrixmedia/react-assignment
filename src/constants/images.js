@@ -9,6 +9,8 @@ const IMAGES = {
     Registereduser: require('../images/Registereduser.png'),
     Researchers: require('../images/Researchers.png'),
     researchAvatar: require('../images/researchAvatar.jpg'),
+    researchPeople: require('../images/researchPeople.jpg'),
+    staff: require('../images/staff.jpg'),
 };
 
 export default IMAGES;
