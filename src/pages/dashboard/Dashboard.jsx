@@ -35,11 +35,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 const Dashboard = () => {
   const { logout } = useAuth();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const [name, setName] = useState('');
-  const [token, setToken] = useState('');
-  const [expire, setExpire] = useState('');
-  const [users, setUsers] = useState([]);
-
 
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);

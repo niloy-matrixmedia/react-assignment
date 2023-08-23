@@ -7,7 +7,7 @@ export const useAuth = () => {
 }
 
 export const AuthProvider = ({ children }) => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false); // You can modify this to retrieve from local storage or other methods
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const login = () => setIsAuthenticated(true);
     const logout = () => setIsAuthenticated(false);

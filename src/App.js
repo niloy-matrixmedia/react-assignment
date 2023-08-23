@@ -11,6 +11,7 @@ import EditProfile from "./pages/profile/EditProfile";
 import Viewdashboard from "./pages/dashboard/Viewdashboard";
 import Update from "./pages/actionspages/Update";
 import Details from "./pages/actionspages/Details";
+import Adddata from "./pages/addData/Adddata";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/view-dashboard" element={<Viewdashboard />} />
             <Route path="/edit/:id" element={<Update />} />
             <Route path="/view/:id" element={<Details />} />
+            <Route path="addData" element={<Adddata />} />
           </Routes>
         </div>
       </AuthProvider>

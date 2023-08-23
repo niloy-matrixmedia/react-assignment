@@ -24,7 +24,7 @@
     color: rgb(255, 255, 255);
 }
 
-.custom-button {
+.custom-navbutton {
     /* background-color: transparent; */
     border-color: white;
     border-radius: 25px;
@@ -34,11 +34,11 @@
     /* transition: background-color 0.3s ease; */
 }
 
-.custom-button:hover {
+.custom-navbutton:hover {
     background-color: rgba(238, 113, 113, 0.979);
     /* Slight gray background on hover */
 }
-.button{
+.navbutton{
     text-decoration: none;
     color: white;
 }

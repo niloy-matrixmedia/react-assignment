@@ -22,9 +22,9 @@ const Navbar = () => {
         </div>
         <div className='heder'>
           <ul className="navbar-nav mr-auto align-items-center">
-            <button className="custom-button" >
+            <button className="custom-navbutton" >
               <li className="nav-item">
-                <a className="button" href="">Today's Newsfeed</a>
+                <a className="navbutton" href="">Today's Newsfeed</a>
               </li>
             </button>
             <li className="nav-item">
